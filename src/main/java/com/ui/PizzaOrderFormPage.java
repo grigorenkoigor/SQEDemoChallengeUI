@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.WebDriver;
 
+import static org.testng.Assert.assertEquals;
+
 public class PizzaOrderFormPage {
 
     WebDriver driver;
@@ -29,6 +31,19 @@ public class PizzaOrderFormPage {
     By placeOrderButton = By.id("placeOrder");
     By resetButton = By.id("reset");
 
+    By popUpText = By.className("ui-dialog-content");
+    By closePopUpbutton = By.className("ui-dialog-titlebar-close");
+
+    // Verify text of message in pop-up
+    public PizzaOrderFormPage verifyTextInDialog(String popUpMessage){
+        assertEquals(popUpMessage, driver.findElement(popUpText).getText());
+        return this;
+    }
+    // Method for clicking by close button on PopUp
+    public PizzaOrderFormPage clickByClosePopUpButton(){
+        driver.findElement(closePopUpbutton).click();
+        return this;
+    }
     // Selector method for dropdown Toppings 1 with name of topping as parameter
     public PizzaOrderFormPage selectFromDropDownToppings1(String toppingType){
         Select drop = new Select(driver.findElement(toppings1pizzaDropdownField));
@@ -40,6 +55,13 @@ public class PizzaOrderFormPage {
     public PizzaOrderFormPage selectFromDropDownToppings2(String toppingType){
         Select drop = new Select(driver.findElement(toppings2pizzaDropdownField));
         drop.selectByVisibleText(toppingType);
+        return this;
+    }
+
+    // Selector method for dropdown Pizza 1 with name of pizza as parameter
+    public PizzaOrderFormPage selectFromDropDownPizzaType(String pizzaType){
+        Select drop = new Select(driver.findElement(pizzaDropdownField));
+        drop.selectByValue(pizzaType);
         return this;
     }
     // Method for setting name field with string parameter

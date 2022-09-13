@@ -60,7 +60,7 @@ Steps to reproduce:
 
  Expected result: Pop-up with text "Thank you for your order! TOTAL: 6.75 Small 6 Slices - no toppings" appears
 
-####  Verify "mall 6 Slices - no toppings" happy path with Cash on Pickup - ID_2
+####  Verify "Small 6 Slices - no toppings" happy path with Cash on Pickup - ID_2
 Steps to reproduce:
 
 1) Chose "mall 6 Slices - no toppings" in Pizza1 dropdown
