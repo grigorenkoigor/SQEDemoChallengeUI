@@ -23,7 +23,6 @@
 				<version>3.0.0-M3</version>
 				<configuration>
 					<parallel>classes</parallel>
-					<threadCount>${testng.thread.count}</threadCount>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
@@ -35,8 +34,6 @@
 
 
     <dependencies>
-
-       
 
         <!--TestNG-->
         <dependency>
@@ -56,6 +53,7 @@
             <artifactId>selenium-server</artifactId>
             <version>3.141.59</version>
         </dependency>
+
         <!--Maven-->
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
