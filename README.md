@@ -329,3 +329,38 @@ Steps to reproduce:
 4) Click on button "Place order"
 
 Expected result: Error message - "Please, chose pizza type"
+
+
+#### List of bugs:
+
+1) Name field is obligatory so user shouldn't have possibility set name with - free spaces. Failed tests:
+- ID_19
+2) It is possible to create order without setting any data accept name and phone. It is no make sense. Such fields as 
+Pizza Type, quantity, name, phone and Payment type should be obligatory. Failed tests:
+- ID_27
+- ID_25
+3) It is possible create order with two payment type specified. It is no make sense from business logic. Failed tests:
+- ID_26
+4) Phone field is obligatory so user shouldn't have possibility set name with - free spaces, random text. Failed tests:
+- ID_21
+- ID_22
+5) It is possible to create order with quantity value - negative number, random text, zero value, double value,
+empty field, free spaces. It is no make sense from business perspective. Failed tests:
+- ID_12
+- ID_13
+- ID_14
+- ID_15
+- ID_16
+- ID_17
+6) Reset button doesn't reset topping1 and topping2 dropdowns. Failed tests:
+- ID_11
+
+#### Issues - improvements necessary 
+
+1) No verification for email field, it is possible to send invalid value,
+to be user friendly it will be good to add messages as in test cases. Failed tests:
+- ID_24
+2) Name of items doesn't much the logic. There are pizza names with comment like "no toppings",
+but user still can specify toppings if he wanted to do that. Same with other namings.
+3) Currency specified only for default item in the pizza type dropdown, so if we complete order
+with this item we will see currency - $, in all other cases there are no currency.
