@@ -43,6 +43,7 @@ public class TestBase {
                         "src/test/resources/chromedriver/windows/chromedriver.exe");
             }
             driver = new ChromeDriver();
+            // Add default size of browser window
             Dimension dimension = new Dimension(1920, 1080);
             driver.manage().window().setSize(dimension);
 

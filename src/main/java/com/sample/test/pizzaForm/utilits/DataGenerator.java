@@ -1,7 +1,6 @@
 package com.sample.test.pizzaForm.utilits;
 
 import com.github.javafaker.Faker;
-import com.github.javafaker.PhoneNumber;
 
 public class DataGenerator {
 

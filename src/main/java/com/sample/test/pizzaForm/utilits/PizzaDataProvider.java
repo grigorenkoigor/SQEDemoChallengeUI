@@ -6,6 +6,7 @@ import org.testng.annotations.DataProvider;
 
 public class PizzaDataProvider {
 
+    // Data provider with 4 parameters in the object: Pizza name, topping 1, topping 2, cost of the one pizza
     @DataProvider(name = "Pizza set")
     public static Object[][] pizzaSet() {
         return new Object[][]{
