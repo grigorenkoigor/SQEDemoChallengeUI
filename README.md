@@ -202,21 +202,6 @@ Steps to reproduce:
 Expected result: Error message that quantity incorrect 
 and only possible value - positive integer
 
-####  Verify Quantity field with positive value - ID_11
-Steps to reproduce:
-
-1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
-2) Click on by Toppings1 dropdown and Chose "Mushrooms" option
-3) Click on by Toppings2 dropdown and Chose "Salami" option
-4) Set quantity field with value - 3
-5) Put in the name field string value (example:"TestName")
-6) Put in the email field string value (example:"test@test.com")
-7) Put in the phone field string value (example:"0987654321")
-8) Select radio button "Credit card"
-9) Click on button "Place order"
-
-Expected result: Pop-up with text "Thank you for your order! TOTAL: 20.25 Small 6 Slices - no toppings" appears
-
 ####  Verify Name field with blank value - ID_12
 Steps to reproduce:
 
@@ -262,7 +247,7 @@ Steps to reproduce:
 
 Expected result: Pop-up with text "Missing phone" appears
 
-####  Verify Name field with free spaces value - ID_15
+####  Verify Phone field with free spaces value - ID_15
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -277,7 +262,7 @@ Steps to reproduce:
 
 Expected result: Spaces should be ignored. Pop-up with text "Missing phone" appears
 
-####  Verify Name field with chars value not numbers - ID_16
+####  Verify phone field with chars value not numbers - ID_16
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown

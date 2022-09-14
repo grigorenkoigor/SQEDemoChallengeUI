@@ -1,13 +1,11 @@
 package com.ui;
 
-import com.sample.test.pizzaForm.constants.PizzaToppings;
-import com.sample.test.pizzaForm.constants.PizzaTypes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.WebDriver;
-
+import lombok.Getter;
 import static org.testng.Assert.assertEquals;
-
+@Getter
 public class PizzaOrderFormPage {
 
     WebDriver driver;
@@ -34,6 +32,30 @@ public class PizzaOrderFormPage {
     By popUpText = By.className("ui-dialog-content");
     By closePopUpbutton = By.className("ui-dialog-titlebar-close");
 
+    // Method for comparing field value with provided constant text
+    public PizzaOrderFormPage compareCurrentFieldValueWith(String constant, String currentFieldValue){
+        assertEquals(constant, currentFieldValue);
+        return this;
+    }
+    // General method to check current selected value in the dropdown
+    public String getCurrentValueOfDropDownByElementName(By element){
+        Select drop = new Select(driver.findElement(element));
+        return drop.getFirstSelectedOption().getText();
+    }
+
+    // Get current value of pizza dropdown field
+    public String getCurrentValuePizzaDropDown(){
+        return getCurrentValueOfDropDownByElementName(pizzaDropdownField);
+    }
+
+    // Get current value of toppings 1 dropdown field
+    public String getCurrentValueToppings1DropDown(){
+        return getCurrentValueOfDropDownByElementName(toppings1pizzaDropdownField);
+    }
+    // Get current value of toppings 2 dropdown field
+    public String getCurrentValueToppings2DropDown(){
+        return getCurrentValueOfDropDownByElementName(toppings2pizzaDropdownField);
+    }
     // Verify text of message in pop-up
     public PizzaOrderFormPage verifyTextInDialog(String popUpMessage){
         assertEquals(popUpMessage, driver.findElement(popUpText).getText());
@@ -43,6 +65,12 @@ public class PizzaOrderFormPage {
     public PizzaOrderFormPage clickByClosePopUpButton(){
         driver.findElement(closePopUpbutton).click();
         return this;
+    }
+    public void
+    closePopUpIfDisplayed(){
+        if (driver.findElement(closePopUpbutton).isDisplayed()){
+            clickByClosePopUpButton();
+        }
     }
     // Selector method for dropdown Toppings 1 with name of topping as parameter
     public PizzaOrderFormPage selectFromDropDownToppings1(String toppingType){
@@ -87,6 +115,18 @@ public class PizzaOrderFormPage {
 
     // Method for setting quantity field with integer parameter
     public PizzaOrderFormPage setQuantityField(int quantity){
+        driver.findElement(quantityInputField).clear();
+        driver.findElement(quantityInputField).sendKeys(String.valueOf(quantity));
+        return this;
+    }
+    // Method for setting quantity field with String parameter
+    public PizzaOrderFormPage setQuantityField(String quantity){
+        driver.findElement(quantityInputField).clear();
+        driver.findElement(quantityInputField).sendKeys(quantity);
+        return this;
+    }
+    // Method for setting quantity field with double parameter
+    public PizzaOrderFormPage setQuantityField(double quantity){
         driver.findElement(quantityInputField).clear();
         driver.findElement(quantityInputField).sendKeys(String.valueOf(quantity));
         return this;
