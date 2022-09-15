@@ -4,13 +4,16 @@ import com.sample.test.pizzaForm.TestBase;
 import com.sample.test.pizzaForm.constants.PizzaToppings;
 import com.sample.test.pizzaForm.constants.PizzaTypes;
 import com.sample.test.pizzaForm.utilits.PizzaDataProvider;
+import com.sample.test.pizzaForm.utilits.listener.Listener;
 import com.ui.PizzaOrderFormPage;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static com.sample.test.pizzaForm.utilits.DataGenerator.*;
 
-public class PizzaOrderFormPageTests extends TestBase {
+@Listeners({Listener.class})
+public class PizzaOrderFormPageTest extends TestBase {
     String pizzaName = PizzaTypes.LARGE_THREETOPPINGS.getDisplayName();
     double pizzaCost = PizzaTypes.LARGE_THREETOPPINGS.getCost();
     String topping1 = PizzaToppings.EXTRACHEESE.getDisplayName();
@@ -22,7 +25,7 @@ public class PizzaOrderFormPageTests extends TestBase {
         new PizzaOrderFormPage(driver).closePopUpIfDisplayed();
     }
 
-    @Test(description = "VVerify the intersection of possible pizza parameters happy path with Credit Card - ID_1-ID_5",
+    @Test(description = "Verify the intersection of possible pizza parameters happy path with Credit Card - ID_1-ID_5",
             dataProvider = "Pizza set", dataProviderClass = PizzaDataProvider.class)
     public void verifyHappyPathWithCreditCard(String pizzaName, String topping1, String topping2,
                                               double pizzaCost, int quantityNumber){

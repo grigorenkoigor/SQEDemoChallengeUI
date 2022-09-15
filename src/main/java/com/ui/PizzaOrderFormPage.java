@@ -1,10 +1,11 @@
 package com.ui;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.WebDriver;
-import lombok.Getter;
 import io.qameta.allure.Step;
+import lombok.Getter;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+
 import static org.testng.Assert.assertEquals;
 @Getter
 public class PizzaOrderFormPage {
@@ -14,6 +15,7 @@ public class PizzaOrderFormPage {
     public PizzaOrderFormPage(WebDriver driver) {
         this.driver = driver;
     }
+
 
     // Below described elements on the page Pizza Order Form
     By pizzaDropdownField = By.id("pizza1Pizza");
@@ -31,13 +33,13 @@ public class PizzaOrderFormPage {
     By closePopUpButton = By.className("ui-dialog-titlebar-close");
 
     // Method for comparing field value with provided constant text
-    @Step("Compare given value with given constant")
+    @Step("Compare given value: {0} with given constant: {1}")
     public PizzaOrderFormPage compareCurrentFieldValueWith(String constant, String currentFieldValue){
         assertEquals(constant, currentFieldValue);
         return this;
     }
     // General method to check current selected value in the dropdown
-    @Step("Get current value of the element in the dropdown for provided element")
+    @Step("Get current value of the element in the dropdown for provided element: {0}")
     public String getCurrentValueOfDropDownByElementName(By element){
         Select drop = new Select(driver.findElement(element));
         return drop.getFirstSelectedOption().getText();
@@ -58,7 +60,7 @@ public class PizzaOrderFormPage {
         return getCurrentValueOfDropDownByElementName(toppings2pizzaDropdownField);
     }
     // Verify text of message in pop-up
-    @Step("Verify text of message in the pop-up")
+    @Step("Compare text of message in the pop-up with provided constant: {0}")
     public PizzaOrderFormPage verifyTextInDialog(String popUpMessage){
         assertEquals(popUpMessage, driver.findElement(popUpText).getText());
         return this;
@@ -78,63 +80,63 @@ public class PizzaOrderFormPage {
         }
     }
     // Selector method for dropdown Toppings 1 with name of topping as parameter
-    @Step("Select item from topping1 dropdown by provided topping type")
+    @Step("Select item from topping1 dropdown by provided topping type: {0}")
     public PizzaOrderFormPage selectFromDropDownToppings1(String toppingType){
         Select drop = new Select(driver.findElement(toppings1pizzaDropdownField));
         drop.selectByVisibleText(toppingType);
         return this;
     }
     // Selector method for dropdown Toppings 2 with name of topping as parameter
-    @Step("Select item from topping2 dropdown by provided topping type")
+    @Step("Select item from topping2 dropdown by provided topping type: {0}")
     public PizzaOrderFormPage selectFromDropDownToppings2(String toppingType){
         Select drop = new Select(driver.findElement(toppings2pizzaDropdownField));
         drop.selectByVisibleText(toppingType);
         return this;
     }
     // Selector method for dropdown Pizza 1 with name of pizza as parameter
-    @Step("Select item from pizza type dropdown by provided pizza type")
+    @Step("Select item from pizza type dropdown by provided pizza type: {0}")
     public PizzaOrderFormPage selectFromDropDownPizzaType(String pizzaType){
         Select drop = new Select(driver.findElement(pizzaDropdownField));
         drop.selectByValue(pizzaType);
         return this;
     }
     // Method for setting name field with string parameter
-    @Step("Set name field by provided name as a parameter")
+    @Step("Set name field by provided name: {0} as a parameter")
     public PizzaOrderFormPage setNameField(String name){
         driver.findElement(nameInputField).clear();
         driver.findElement(nameInputField).sendKeys(name);
         return this;
     }
     // Method for setting email field with string parameter
-    @Step("Set email field by provided name as a parameter")
+    @Step("Set email field by provided value: {0} as a parameter")
     public PizzaOrderFormPage setEmailField(String email){
         driver.findElement(emailInputField).clear();
         driver.findElement(emailInputField).sendKeys(email);
         return this;
     }
     // Method for setting phone field with string parameter
-    @Step("Set phone field by provided string value as a parameter")
+    @Step("Set phone field by provided string value: {0} as a parameter")
     public PizzaOrderFormPage setPhoneField(String phone){
         driver.findElement(phoneInputField).clear();
         driver.findElement(phoneInputField).sendKeys(phone);
         return this;
     }
     // Method for setting quantity field with integer parameter
-    @Step("Set phone field by provided integer value as a parameter")
+    @Step("Set phone field by provided integer value: {0} as a parameter")
     public PizzaOrderFormPage setQuantityField(int quantity){
         driver.findElement(quantityInputField).clear();
         driver.findElement(quantityInputField).sendKeys(String.valueOf(quantity));
         return this;
     }
     // Method for setting quantity field with String parameter
-    @Step("Set quantity field by provided string value as a parameter")
+    @Step("Set quantity field by provided string value: {0} as a parameter")
     public PizzaOrderFormPage setQuantityField(String quantity){
         driver.findElement(quantityInputField).clear();
         driver.findElement(quantityInputField).sendKeys(quantity);
         return this;
     }
     // Method for setting quantity field with double parameter
-    @Step("Set quantity field by provided double value as a parameter")
+    @Step("Set quantity field by provided double value: {0} as a parameter")
     public PizzaOrderFormPage setQuantityField(double quantity){
         driver.findElement(quantityInputField).clear();
         driver.findElement(quantityInputField).sendKeys(String.valueOf(quantity));
