@@ -47,7 +47,7 @@ We will be evaluating
 
 #### Test Cases:
 
-####  Verify "Small 6 Slices - no toppings" happy path with Credit Card - ID_1
+####  Verify the intersection of possible pizza parameters happy path with Credit Card - ID_1-ID_5
 Steps to reproduce:
 
  1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -60,7 +60,7 @@ Steps to reproduce:
 
  Expected result: Pop-up with text "Thank you for your order! TOTAL: 6.75 Small 6 Slices - no toppings" appears
 
-####  Verify "mall 6 Slices - no toppings" happy path with Cash on Pickup - ID_2
+####  Verify the intersection of possible pizza parameters happy path with Cash on Pickup - ID_6-ID_10
 Steps to reproduce:
 
 1) Chose "mall 6 Slices - no toppings" in Pizza1 dropdown
@@ -73,41 +73,7 @@ Steps to reproduce:
 
 Expected result: Pop-up with text "Thank you for your order! TOTAL: 6.75 Small 6 Slices - no toppings" appears
 
-####  Verify "Small 6 Slices - no toppings" happy path with one topping and Credit Card - ID_3
-Steps to reproduce:
-
-1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
-2) Click on by Toppings1 dropdown and Chose "Mushrooms" option 
-3) Set quantity field with 1
-4) Put in the name field string value (example:"TestName")
-5) Put in the email field string value (example:"test@test.com")
-6) Put in the phone field string value (example:"0987654321")
-7) Select radio button "Credit card"
-8) Click on button "Place order"
-
-Expected result: Pop-up with text "Thank you for your order! TOTAL: 6.75 Small 6 Slices - no toppings" appears
-
-
-####  Verify "Small 6 Slices - no toppings" happy path with two topping and Credit Card - ID_4
-Steps to reproduce:
-
-1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
-2) Click on by Toppings1 dropdown and Chose "Mushrooms" option
-3) Click on by Toppings2 dropdown and Chose "Salami" option
-4) Set quantity field with 1
-5) Put in the name field string value (example:"TestName")
-6) Put in the email field string value (example:"test@test.com")
-7) Put in the phone field string value (example:"0987654321")
-8) Select radio button "Credit card"
-9) Click on button "Place order"
-
-Expected result: Pop-up with text "Thank you for your order! TOTAL: 6.75 Small 6 Slices - no toppings" appears
-
-Sorry do not want copy paste them.
-Test cases from ID_1 to ID_4 should be used for all types of pizza in pizza1 dropdown, different will be only 
-in final message.
-
-####  Verify Reset button - ID_5
+####  Verify Reset button - ID_11
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -122,7 +88,7 @@ Steps to reproduce:
 
 Expected result: All fields, dropdowns and buttons should be in default state
 
-####  Verify Quantity field with negative number - ID_6
+####  Verify Quantity field with negative number - ID_12
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -138,7 +104,7 @@ Steps to reproduce:
 Expected result: Error message that quantity incorrect
 and only possible value - positive integer
 
-####  Verify Quantity field with string value - ID_7
+####  Verify Quantity field with string value - ID_13
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -154,7 +120,7 @@ Steps to reproduce:
 Expected result: Error message that quantity incorrect
 and only possible value - positive integer
 
-####  Verify Quantity field with value zero - ID_8
+####  Verify Quantity field with value zero - ID_14
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -170,13 +136,13 @@ Steps to reproduce:
 Expected result: Error message that quantity incorrect
 and only possible value - positive integer
 
-####  Verify Quantity field with free spaces - ID_9
+####  Verify Quantity field with empty value - ID_15
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
 2) Click on by Toppings1 dropdown and Chose "Mushrooms" option
 3) Click on by Toppings2 dropdown and Chose "Salami" option
-4) Set quantity field with few free spaces
+4) Set quantity field with empty value
 5) Put in the name field string value (example:"TestName")
 6) Put in the email field string value (example:"test@test.com")
 7) Put in the phone field string value (example:"0987654321")
@@ -186,7 +152,23 @@ Steps to reproduce:
 Expected result: Error message that quantity incorrect
 and only possible value - positive integer
 
-####  Verify Quantity field with double value - ID_10
+####  Verify Quantity field with double value - ID_16
+Steps to reproduce:
+
+1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
+2) Click on by Toppings1 dropdown and Chose "Mushrooms" option
+3) Click on by Toppings2 dropdown and Chose "Salami" option
+4) Set quantity field with double value
+5) Put in the name field string value (example:"TestName")
+6) Put in the email field string value (example:"test@test.com")
+7) Put in the phone field string value (example:"0987654321")
+8) Select radio button "Credit card"
+9) Click on button "Place order"
+
+Expected result: Error message that quantity incorrect
+and only possible value - positive integer
+
+####  Verify Quantity field with free spaces value - ID_17
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -202,22 +184,7 @@ Steps to reproduce:
 Expected result: Error message that quantity incorrect 
 and only possible value - positive integer
 
-####  Verify Quantity field with positive value - ID_11
-Steps to reproduce:
-
-1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
-2) Click on by Toppings1 dropdown and Chose "Mushrooms" option
-3) Click on by Toppings2 dropdown and Chose "Salami" option
-4) Set quantity field with value - 3
-5) Put in the name field string value (example:"TestName")
-6) Put in the email field string value (example:"test@test.com")
-7) Put in the phone field string value (example:"0987654321")
-8) Select radio button "Credit card"
-9) Click on button "Place order"
-
-Expected result: Pop-up with text "Thank you for your order! TOTAL: 20.25 Small 6 Slices - no toppings" appears
-
-####  Verify Name field with blank value - ID_12
+####  Verify Name field with empty value - ID_18
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -232,7 +199,7 @@ Steps to reproduce:
 
 Expected result: Pop-up with text "Missing name" appears
 
-####  Verify Name field with free spaces value - ID_13
+####  Verify Name field with free spaces value - ID_19
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -247,7 +214,7 @@ Steps to reproduce:
 
 Expected result: Spaces should be ignored. Pop-up with text "Missing name" appears
 
-####  Verify Phone field with blank value - ID_14
+####  Verify Phone field with empty value - ID_20
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -262,7 +229,7 @@ Steps to reproduce:
 
 Expected result: Pop-up with text "Missing phone" appears
 
-####  Verify Name field with free spaces value - ID_15
+####  Verify Phone field with free spaces value - ID_21
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -277,7 +244,7 @@ Steps to reproduce:
 
 Expected result: Spaces should be ignored. Pop-up with text "Missing phone" appears
 
-####  Verify Name field with chars value not numbers - ID_16
+####  Verify phone field with text - ID_22
 Steps to reproduce:
 
 1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
@@ -292,3 +259,108 @@ Steps to reproduce:
 
 Expected result: Error message that phone incorrect
 and only possible value - please use international phone format like (+380099332211)
+
+####  Verify email field with invalid format - ID_23
+Steps to reproduce:
+
+1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
+2) Click on by Toppings1 dropdown and Chose "Mushrooms" option
+3) Click on by Toppings2 dropdown and Chose "Salami" option
+4) Set quantity field with value - 3
+5) Put in the name field string value (example:"TestName")
+6) Put in the email field string value (example:"InvalidEmail")
+7) Put in the phone field value - "example:"0987654321"
+8) Select radio button "Credit card"
+9) Click on button "Place order"
+
+Expected result: Error message - "Invalid email, please use next format - email@email.com"
+
+####  Verify email field with free spaces value - ID_24
+Steps to reproduce:
+
+1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
+2) Click on by Toppings1 dropdown and Chose "Mushrooms" option
+3) Click on by Toppings2 dropdown and Chose "Salami" option
+4) Set quantity field with value - 3
+5) Put in the name field string value (example:"TestName")
+6) Put in the email field string value (example:"InvalidEmail")
+7) Put in the phone field value - "example:"0987654321"
+8) Select radio button "Credit card"
+9) Click on button "Place order"
+
+Expected result:  Pop-up with text "Thank you for your order! TOTAL: 6.75 Small 6 Slices - no toppings" appears
+
+####  Verify order creation without specified payment type - ID_25
+Steps to reproduce:
+
+1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
+2) Click on by Toppings1 dropdown and Chose "Mushrooms" option
+3) Click on by Toppings2 dropdown and Chose "Salami" option
+4) Set quantity field with value - 3
+5) Put in the name field string value (example:"TestName")
+6) Put in the email field string value (example:"InvalidEmail")
+7) Put in the phone field value - "example:"0987654321"
+8) Click on button "Place order"
+
+Expected result: Error message - "Please, chose one payment type - Credit card or Cash on Pickup"
+
+####  Verify order creation with two specified payment type - ID_26
+Steps to reproduce:
+
+1) Chose "Small 6 Slices - no toppings" in Pizza1 dropdown
+2) Click on by Toppings1 dropdown and Chose "Mushrooms" option
+3) Click on by Toppings2 dropdown and Chose "Salami" option
+4) Set quantity field with value - 3
+5) Put in the name field string value (example:"TestName")
+6) Put in the email field string value (example:"InvalidEmail")
+7) Put in the phone field  value - "example:"0987654321"
+8) Select radio button "Credit card"
+9) Select radio button "Cash on Pickup"
+10) Click on button "Place order"
+
+Expected result: Error message - "Please, chose one payment type - Credit card or Cash on Pickup"
+
+####  Verify order creation without any data accept name and phone - ID_27
+Steps to reproduce:
+
+1) Put in the name field string value (example:"TestName")
+2) Put in the phone field value - "example:"0987654321"
+3) Select radio button "Credit card"
+4) Click on button "Place order"
+
+Expected result: Error message - "Please, chose pizza type"
+
+
+#### List of bugs:
+
+1) Name field is obligatory so user shouldn't have possibility set name with - free spaces. Failed tests:
+- ID_19
+2) It is possible to create order without setting any data accept name and phone. It is no make sense. Such fields as 
+Pizza Type, quantity, name, phone and Payment type should be obligatory. Failed tests:
+- ID_27
+- ID_25
+3) It is possible create order with two payment type specified. It is no make sense from business logic. Failed tests:
+- ID_26
+4) Phone field is obligatory so user shouldn't have possibility set name with - free spaces, random text. Failed tests:
+- ID_21
+- ID_22
+5) It is possible to create order with quantity value - negative number, random text, zero value, double value,
+empty field, free spaces. It is no make sense from business perspective. Failed tests:
+- ID_12
+- ID_13
+- ID_14
+- ID_15
+- ID_16
+- ID_17
+6) Reset button doesn't reset topping1 and topping2 dropdowns. Failed tests:
+- ID_11
+
+#### Issues - improvements necessary 
+
+1) No verification for email field, it is possible to send invalid value,
+to be user friendly it will be good to add messages as in test cases. Failed tests:
+- ID_24
+2) Name of items doesn't much the logic. There are pizza names with comment like "no toppings",
+but user still can specify toppings if he wanted to do that. Same with other namings.
+3) Currency specified only for default item in the pizza type dropdown, so if we complete order
+with this item we will see currency - $, in all other cases there are no currency.

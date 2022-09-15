@@ -1,10 +1,12 @@
 package com.sample.test.pizzaForm;
 
-import static org.testng.Assert.fail;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
+import static org.testng.Assert.fail;
 
 public class TestBase {
 
@@ -41,12 +43,15 @@ public class TestBase {
                         "src/test/resources/chromedriver/windows/chromedriver.exe");
             }
             driver = new ChromeDriver();
+            // Add default size of browser window
+            Dimension dimension = new Dimension(1920, 1080);
+            driver.manage().window().setSize(dimension);
+
         }
         else {
-            fail("Unsupported bfrowser " + config.getBrowser());
+            fail("Unsupported browser " + config.getBrowser());
         }
        
     }
-
 
 }
